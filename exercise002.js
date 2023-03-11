@@ -10,3 +10,17 @@ const fetchData = (apiEndPoint) => {
 };
 
 fetchData(jsonTypicode);
+
+// Resolve the promise using async/await
+
+const fetchDataAsync = async (apiEndPoint) => {
+  try {
+    const response = await fetch(apiEndPoint);
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+fetchDataAsync(jsonTypicode);
